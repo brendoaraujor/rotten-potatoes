@@ -25,6 +25,6 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: 
-            brendo3d2y/rotten-potatoes:latest
-            brendo3d2y/rotten-potatoes:${{ github.run_number }}
+            brendo3d2y/rotten-potatoes:v1
+            #brendo3d2y/rotten-potatoes:${{ github.run_number }}
         
