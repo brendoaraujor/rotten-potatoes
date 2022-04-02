@@ -1,4 +1,4 @@
-name: CI-CD
+name: CI
 
 on:
   push:
@@ -27,4 +27,17 @@ jobs:
           tags: 
             brendo3d2y/rotten-potatoes:v1
             #brendo3d2y/rotten-potatoes:${{ github.run_number }}
-        
+
+  CD:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Kubernetes Set Context
+        uses: Azure/k8s-set-context@v2
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.K8S_KUBECONFIG }}
+      
+      
